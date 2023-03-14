@@ -1,6 +1,6 @@
 from win32api import GetSystemMetrics
 from pygame import mixer
-from cards import Cards, cardsRectList, characterSet
+from cards import Cards, cards_rect_list, characterSet
 from Details import Details
 import mainGame
 import pygame
@@ -177,8 +177,9 @@ class Game:
                 if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
                     # Set the x, y postions of the mouse click
                     x, y = event.pos
-                    if any(rect.collidepoint(x, y) for rect in cardsRectList):
-                        Details.Render()
+                    if any(rect.collidepoint(x, y) for rect in cards_rect_list):
+                        details = Details()
+                        details.render()
                 
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_m:
@@ -190,9 +191,9 @@ class Game:
                             BGMusic = True
                     if event.key == pygame.K_BACKSPACE or event.key == pygame.K_ESCAPE:
                         pygame.quit()
-                        mainGame.mainGame()
+                        mainGame.run_game()
 
             screen.blit(lockerbackgroundImg, [0, 0])
-            Cards.Render(screen)
+            Cards.render(screen)
 
             pygame.display.update()

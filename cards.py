@@ -168,7 +168,7 @@ characterSet = {
     }
 }
 
-cardsRectList, AnimenameList = [], []
+cards_rect_list, animename_list = [], []
 
 class Cards:
     def __init__(self):
@@ -203,7 +203,7 @@ class Cards:
     #         cardsRectList.extend([screen.blit(cardsImg, [x, y])])
 
 
-    def Render(screen):
+    def render(screen):
         pygame.init()
         font = pygame.font.Font('freesansbold.ttf', 32)
 
@@ -237,4 +237,4 @@ class Cards:
         for (y, animename) in zip(t_posY, animenameList):
             screen.blit(animename, [10, y])
         for (x, y, card_img) in zip(c_posX, c_posY, cardsList):
-            cardsRectList.append(screen.blit(card_img, [x, y]))
+            cards_rect_list.append(screen.blit(card_img, [x, y]))
