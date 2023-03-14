@@ -73,7 +73,10 @@ class Game:
                 if event.type == pygame.QUIT:
                     pygame.quit()
 
-                if event.type == pygame.MOUSEBUTTONDOWN:
+                if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
+
+                    # ai_cards_generate = True
+
                     mousePosition = pygame.mouse.get_pos()
                     for i, rect in enumerate(rects):
                         if cards[i] and rect.collidepoint(mousePosition):
@@ -117,13 +120,37 @@ class Game:
                     #         cardsBackFace6 = pygame.image.load(characterSet[str(i)]["characters"][str(j)]["card"]).convert()
                     #         cardsBackFace6 = pygame.transform.scale(cardsBackFace6, (200, 250))
                     #         f = 0
-                    if all(var == False for var in cards):
-                        for _ in range(6):
-                            if cardsBackFaceAIList[_] != 0:
-                                i, j = card_indices.pop()
-                                cardsBackFaceAIList[_] = pygame.image.load(characterSet[str(i)]["characters"][str(j)]["card"]).convert()
-                                cardsBackFaceAIList[_] = pygame.transform.scale(cardsBackFaceAIList[_], (200, 250))
 
+                    # if ai_cards_generate and all(var == False for var in cards):
+                    #     for _ in range(6):
+                    #         if cardsBackFaceAIList[_] != 0:
+                    #             i, j = card_indices.pop()
+                    #             cardsBackFaceAIList[_] = pygame.image.load(characterSet[str(i)]["characters"][str(j)]["card"]).convert()
+                    #             cardsBackFaceAIList[_] = pygame.transform.scale(cardsBackFaceAIList[_], (200, 250))
+                    #     ai_cards_generate = False
+
+                    # define ai_cards as a list to store AI cards
+                    # ai_cards = [True] * 6
+                    # ai_cards_generate = True
+
+                    # # replace the for loop with the following code to generate AI cards
+                    # if all(not card for card in cards) and ai_cards_generate:
+                    #     for _ in range(3):
+                    #         for i in range(6):
+                    #             if card_indices:
+                    #                 j, k = card_indices.pop()
+                    #                 cardsBackFaceAIList[i] = pygame.image.load(characterSet[str(j)]["characters"][str(k)]["card"]).convert()
+                    #                 cardsBackFaceAIList[i] = pygame.transform.scale(cardsBackFaceAIList[i], (200, 250))
+                    #         ai_cards_generate = False
+
+                    #     if all(not card for card in cards):
+                    #         ai_cards = [False] * 6
+                if event.type == pygame.MOUSEBUTTONDOWN and event.button == 3:
+                    mousePosition = pygame.mouse.get_pos()
+                    for i, rect in enumerate(rects):
+                        if not cards[i] and rect.collidepoint(mousePosition):
+                            # scale up the image if currently not scaled
+                            cardsBackFaceList[i] = pygame.transform.scale(cardsBackFaceList[i], (300, 350))
 
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_m:
