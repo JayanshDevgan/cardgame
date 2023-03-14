@@ -11,81 +11,81 @@ characterSet = {
                 "id": 0,
                 "name": "naruto",
                 "posX": 10,
-                # "A":,
-                # "D":,
-                # "S":
+                "A": 60,
+                "D": 80,
+                "S": 78
             },
             "1": {
                 "card": "./img/cards/naruto/sasuke-1.png",
                 "id": 1,
                 "name": "sasuke",
                 "posX": 25,
-                # "A":,
-                # "D":,
-                # "S":
+                "A": 80,
+                "D": 55,
+                "S": 90
             },
             "2": {
                 "card": "./img/cards/naruto/kakashi-1.png",
                 "id": 2,
                 "name": "kakashi",
                 "posX": 210,
-                # "A":,
-                # "D":,
-                # "S":
+                "A": 80,
+                "D": 50,
+                "S": 80
             },
             "3": {
                 "card": "./img/cards/naruto/sakura-1.png",
                 "id": 3,
                 "name": "sakura",
                 "posX": 395,
-                # "A":,
-                # "D":,
-                # "S":
+                "A": 65,
+                "D": 60,
+                "S": 52
             },
             "4": {
                 "card": "./img/cards/naruto/orochimaru-1.png",
                 "id": 4,
                 "name": "orochimaru",
                 "posX": 580,
-                # "A":,
-                # "D":,
-                # "S":
+                "A": 80,
+                "D": 90,
+                "S": 72
             },
             "5": {
                 "card": "./img/cards/naruto/itachi-1.png",
                 "id": 5,
                 "name": "itachi",
                 "posX": 765,
-                # "A":,
-                # "D":,
-                # "S":
+                "A": 75,
+                "D": 90,
+                "S": 75
             },
             "6": {
                 "card": "./img/cards/naruto/rocklee-1.png",
                 "id": 6,
                 "name": "rocklee",
                 "posX": 950,
-                # "A":,
-                # "D":,
-                # "S":
+                "A": 80,
+                "D": 60,
+                "S": 100
             },
             "7": {
                 "card": "./img/cards/naruto/madara-1.png",
                 "id": 7,
                 "name": "madara",
                 "posX": 1135,
-                # "A":,
-                # "D":,
-                # "S":
+                "A": 92,
+                "D": 70,
+                "S": 90
             },
             "8": {
                 "card": "./img/cards/naruto/tenten-1.png",
                 "id": 8,
                 "name": "tenten",
                 "posX": 1320,
-                # "A":,
-                # "D":,
-                # "S":
+                "A": 65,
+                "D": 45,
+                "S": 35
             },
         }
     },
@@ -99,63 +99,63 @@ characterSet = {
                 "id": 9,
                 "name": "Gon Freecss",
                 "posX": 10,
-                # "A":,
-                # "D":,
-                # "S":
+                "A": 85,
+                "D": 90,
+                "S": 70
             },
             "1": {
                 "card": "./img/cards/hunterXhunter/hisoka-1.png",
                 "id": 10,
                 "name": "hisoka",
                 "posX": 25,
-                # "A":,
-                # "D":,
-                # "S":
+                "A": 100,
+                "D": 80,
+                "S": 90
             },
             "2": {
                 "card": "./img/cards/hunterXhunter/killuazoldyck-1.png",
                 "id": 11,
                 "name": "killua zoldyck",
                 "posX": 210,
-                # "A":,
-                # "D":,
-                # "S":
+                "A": 95,
+                "D": 90,
+                "S": 100
             },
             "3": {
                 "card": "./img/cards/hunterXhunter/leorio-1.png",
                 "id": 12,
                 "name": "leorio",
                 "posX": 395,
-                # "A":,
-                # "D":,
-                # "S":
+                "A": 15,
+                "D": 70,
+                "S": 80
             },
             "4": {
                 "card": "./img/cards/hunterXhunter/kurapika-1.png",
                 "id": 13,
                 "name": "kurapika",
                 "posX": 580,
-                # "A":,
-                # "D":,
-                # "S":
+                "A": 45,
+                "D": 80,
+                "S": 80
             },
             "5": {
                 "card": "./img/cards/hunterXhunter/biscuitkrueger-1.png",
                 "id": 14,
                 "name": "biscuit krueger",
                 "posX": 765,
-                # "A":,
-                # "D":,
-                # "S":
+                "A": 92,
+                "D": 80,
+                "S": 70
             },
             "6": {
                 "card": "./img/cards/hunterXhunter/IllumiZoldyck-1.png",
                 "id": 15,
                 "name": "Illumi Zoldyck",
                 "posX": 950,
-                # "A":,
-                # "D":,
-                # "S":
+                "A": 85,
+                "D": 80,
+                "S": 80
             },
         }
     },
@@ -169,72 +169,72 @@ characterSet = {
                 "id": 16,
                 "name": "Tanjiro Kamado",
                 "posX": 10,
-                # "A":,
-                # "D":,
-                # "S":
+                "A": 80,
+                "D": 80,
+                "S": 70
             },
             "1": {
                 "card": "./img/cards/Demon Slayer/NezukoKamado-1.png",
                 "id": 17,
                 "name": "Nezuko Kamado",
                 "posX": 25,
-                # "A":,
-                # "D":,
-                # "S":
+                "A": 80,
+                "D": 90,
+                "S": 70
             },
             "2": {
                 "card": "./img/cards/Demon Slayer/ZenitsuAgatsuma-1.png",
                 "id": 18,
                 "name": "Zenitsu Agatsuma",
                 "posX": 210,
-                # "A":,
-                # "D":,
-                # "S":
+                "A": 90,
+                "D": 60,
+                "S": 90
             },
             "3": {
                 "card": "./img/cards/Demon Slayer/GiyuTomioka-1.png",
                 "id": 19,
                 "name": "Giyu Tomioka",
                 "posX": 395,
-                # "A":,
-                # "D":,
-                # "S":
+                "A": 92,
+                "D": 80,
+                "S": 70
             },
             "4": {
                 "card": "./img/cards/Demon Slayer/InosukeHashibira-1.png",
                 "id": 20,
                 "name": "Inosuke Hashibira",
                 "posX": 580,
-                # "A":,
-                # "D":,
-                # "S":
+                "A": 80,
+                "D": 80,
+                "S": 75
             },
             "5": {
                 "card": "./img/cards/Demon Slayer/SakonjiUrokodaki-1.png",
                 "id": 21,
                 "name": "Sakonji Urokodaki",
                 "posX": 765,
-                # "A":,
-                # "D":,
-                # "S":
+                "A": 100,
+                "D": 80,
+                "S": 80
             },
             "6": {
                 "card": "./img/cards/Demon Slayer/Makomo-1.png",
                 "id": 22,
                 "name": "Makomo",
                 "posX": 950,
-                # "A":,
-                # "D":,
-                # "S":
+                "A": 10,
+                "D": 10,
+                "S": 10
             },
             "7": {
                 "card": "./img/cards/Demon Slayer/Sabito-1.png",
                 "id": 23,
                 "name": "Sabito",
                 "posX": 1135,
-                # "A":,
-                # "D":,
-                # "S":
+                "A": 100,
+                "D": 80,
+                "S": 90
             },
         }
     }
