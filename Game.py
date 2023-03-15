@@ -148,9 +148,18 @@ class Game:
                 if event.type == pygame.MOUSEBUTTONDOWN and event.button == 3:
                     mousePosition = pygame.mouse.get_pos()
                     for i, rect in enumerate(rects):
-                        if not cards[i] and rect.collidepoint(mousePosition):
-                            # scale up the image if currently not scaled
-                            cardsBackFaceList[i] = pygame.transform.scale(cardsBackFaceList[i], (300, 350))
+                        if rect.collidepoint(mousePosition) and not cards[i]:
+                            current_dims = cardsBackFaceList[i].get_size()
+                            new_dims = (300, 350) if current_dims == (200, 250) else (200, 250)
+                            # use smoothscale algorithm for scaling
+                            cardsBackFaceList[i] = pygame.transform.smoothscale(cardsBackFaceList[i], new_dims)
+                            # scale down all other cards
+                            for j, card in enumerate(cardsBackFaceList):
+                                if j != i:
+                                    cardsBackFaceList[j] = pygame.transform.smoothscale(card, (200, 250))
+                            # update the card status
+                            cards = [False] * len(cards)
+                            cards[i] = True
 
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_m:
