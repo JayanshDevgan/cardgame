@@ -246,35 +246,6 @@ class Cards:
     def __init__(self):
         return self
     
-    # def Render(screen):
-    #     cardsList, animenameList = [], []
-    #     pygame.init()
-    #     font = pygame.font.Font('freesansbold.ttf', 32)
-    #     c_posX, c_posY, t_posY = [], [], []
-    #     for i in characterSet:
-    #             animenametext = font.render(characterSet[str(i)]["animename"], True, (255, 255, 255))
-    #             animenameList.append(animenametext)
-                
-    #             for j in characterSet[i]["characters"]:
-    #                 cardsImg1 = pygame.image.load(characterSet[str(i)]["characters"][str(j)]["card"])
-    #                 cardsImg1 = pygame.transform.scale(cardsImg1, (170, 220))
-
-    #                 cardsList.append(cardsImg1)
-                    
-    #                 if characterSet[str(i)]["characters"][str(j)]["posX"] > 10:
-    #                     c_posX.append(characterSet[str(i)]["characters"][str(j)]["posX"] + cardsImg1.get_width())
-    #                 else:
-    #                     c_posX.append(characterSet[str(i)]["characters"][str(j)]["posX"])
-    #                 c_posY.append(characterSet[str(i)]["posY"])
-    #             t_posY.append(characterSet[str(i)]["tposY"])
-
-    #     for (y, animename) in zip(t_posY, animenameList):
-    #         screen.blit(animename, [10, y])
-    #     for (x, y, cardsImg) in zip(c_posX, c_posY, cardsList):
-    #         # screen.blit(cardsImg, [x, y])
-    #         cardsRectList.extend([screen.blit(cardsImg, [x, y])])
-
-
     def render(screen):
         pygame.init()
         font = pygame.font.Font('freesansbold.ttf', 32)

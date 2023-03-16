@@ -33,13 +33,6 @@ class Game:
 
         rects = [pygame.Rect(180 + i * (20 + cardsBackFace.get_width()), 700, 200, 250) for i, _ in enumerate(range(6))]
 
-        # rect1 = pygame.Rect(180, 700, 200, 250)
-        # rect2 = pygame.Rect(200 + cardsBackFace.get_width(), 700, 200, 250)
-        # rect3 = pygame.Rect(420 + cardsBackFace.get_width(), 700, 200, 250)
-        # rect4 = pygame.Rect(640 + cardsBackFace.get_width(), 700, 200, 250)
-        # rect5 = pygame.Rect(860 + cardsBackFace.get_width(), 700, 200, 250)
-        # rect6 = pygame.Rect(1080 + cardsBackFace.get_width(), 700, 200, 250)
-
         # AI
         cardsBackFaceAI = pygame.image.load('./img/cards/cardsBackFace.png').convert()
         cardsBackFaceAI = pygame.transform.scale(cardsBackFaceAI, (200, 250))
@@ -49,14 +42,6 @@ class Game:
         AIrects = [pygame.Rect(180 + i * (20 + cardsBackFace.get_width()), 200, 200, 250) for i, _ in enumerate(range(6))]
 
         random.seed()
-
-        # NoOfAnime = len(characterSet)
-        # if NoOfAnime == 0:
-        #     card_indices = [(i, j) for i in range(NoOfAnime) for j in range(len(characterSet["0"]["characters"]))]
-        # elif NoOfAnime == 1:
-        #     card_indices = [(i, j) for i in range(NoOfAnime) for j in range(len(characterSet["1"]["characters"]))]
-        # else:
-        #     card_indices = [(i, j) for i in range(NoOfAnime) for j in range(len(characterSet["2"]["characters"]))]
 
         card_indices = []
 
@@ -75,8 +60,6 @@ class Game:
 
                 if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
 
-                    # ai_cards_generate = True
-
                     mousePosition = pygame.mouse.get_pos()
                     for i, rect in enumerate(rects):
                         if cards[i] and rect.collidepoint(mousePosition):
@@ -84,82 +67,43 @@ class Game:
                             cardsBackFaceList[i] = pygame.image.load(characterSet[str(j)]["characters"][str(k)]["card"]).convert()
                             cardsBackFaceList[i] = pygame.transform.scale(cardsBackFaceList[i], (200, 250))
                             cards[i] = False
-                    # if a:
-                    #     if rect1.collidepoint(mousePosition):
-                    #         i, j = card_indices.pop()
-                    #         cardsBackFace1 = pygame.image.load(characterSet[str(i)]["characters"][str(j)]["card"]).convert()
-                    #         cardsBackFace1 = pygame.transform.scale(cardsBackFace1, (200, 250))
-                    #         a = 0
-                    # if b:
-                    #     if rect2.collidepoint(mousePosition):
-                    #         i, j = card_indices.pop()
-                    #         cardsBackFace2 = pygame.image.load(characterSet[str(i)]["characters"][str(j)]["card"]).convert()
-                    #         cardsBackFace2 = pygame.transform.scale(cardsBackFace2, (200, 250))
-                    #         b = 0
-                    # if c:
-                    #     if rect3.collidepoint(mousePosition):
-                    #         i, j = card_indices.pop()
-                    #         cardsBackFace3 = pygame.image.load(characterSet[str(i)]["characters"][str(j)]["card"]).convert()
-                    #         cardsBackFace3 = pygame.transform.scale(cardsBackFace3, (200, 250))
-                    #         c = 0
-                    # if d:
-                    #     if rect4.collidepoint(mousePosition):
-                    #         i, j = card_indices.pop()
-                    #         cardsBackFace4 = pygame.image.load(characterSet[str(i)]["characters"][str(j)]["card"]).convert()
-                    #         cardsBackFace4 = pygame.transform.scale(cardsBackFace4, (200, 250))
-                    #         d = 0
-                    # if e:
-                    #     if rect5.collidepoint(mousePosition):
-                    #         i, j = card_indices.pop()
-                    #         cardsBackFace5 = pygame.image.load(characterSet[str(i)]["characters"][str(j)]["card"]).convert()
-                    #         cardsBackFace5 = pygame.transform.scale(cardsBackFace5, (200, 250))
-                    #         e = 0
-                    # if f:
-                    #     if rect6.collidepoint(mousePosition):
-                    #         i, j = card_indices.pop()
-                    #         cardsBackFace6 = pygame.image.load(characterSet[str(i)]["characters"][str(j)]["card"]).convert()
-                    #         cardsBackFace6 = pygame.transform.scale(cardsBackFace6, (200, 250))
-                    #         f = 0
-
-                    # if ai_cards_generate and all(var == False for var in cards):
-                    #     for _ in range(6):
-                    #         if cardsBackFaceAIList[_] != 0:
-                    #             i, j = card_indices.pop()
-                    #             cardsBackFaceAIList[_] = pygame.image.load(characterSet[str(i)]["characters"][str(j)]["card"]).convert()
-                    #             cardsBackFaceAIList[_] = pygame.transform.scale(cardsBackFaceAIList[_], (200, 250))
-                    #     ai_cards_generate = False
-
-                    # define ai_cards as a list to store AI cards
-                    # ai_cards = [True] * 6
-                    # ai_cards_generate = True
-
-                    # # replace the for loop with the following code to generate AI cards
-                    # if all(not card for card in cards) and ai_cards_generate:
-                    #     for _ in range(3):
-                    #         for i in range(6):
-                    #             if card_indices:
-                    #                 j, k = card_indices.pop()
-                    #                 cardsBackFaceAIList[i] = pygame.image.load(characterSet[str(j)]["characters"][str(k)]["card"]).convert()
-                    #                 cardsBackFaceAIList[i] = pygame.transform.scale(cardsBackFaceAIList[i], (200, 250))
-                    #         ai_cards_generate = False
-
-                    #     if all(not card for card in cards):
-                    #         ai_cards = [False] * 6
+                    
+                selected_card = None
                 if event.type == pygame.MOUSEBUTTONDOWN and event.button == 3:
-                    mousePosition = pygame.mouse.get_pos()
+                    mouse_pos = pygame.mouse.get_pos()
                     for i, rect in enumerate(rects):
-                        if rect.collidepoint(mousePosition) and not cards[i]:
-                            current_dims = cardsBackFaceList[i].get_size()
-                            new_dims = (300, 350) if current_dims == (200, 250) else (200, 250)
-                            # use smoothscale algorithm for scaling
-                            cardsBackFaceList[i] = pygame.transform.smoothscale(cardsBackFaceList[i], new_dims)
-                            # scale down all other cards
-                            for j, card in enumerate(cardsBackFaceList):
-                                if j != i:
-                                    cardsBackFaceList[j] = pygame.transform.smoothscale(card, (200, 250))
-                            # update the card status
-                            cards = [False] * len(cards)
-                            cards[i] = True
+                        if rect.collidepoint(mouse_pos) and not cards[i]:
+                            if selected_card == i:
+                                selected_card = None
+                                pygame.draw.rect(screen, (0, 0, 0), rect, 2)
+                            else:
+                                if selected_card is not None:
+                                    pygame.draw.rect(screen, (0, 0, 0), rects[selected_card], 2)
+                                selected_card = i
+                                while True:
+                                    pygame.draw.rect(screen, (255, 0, 0), rect, 3)
+                                    pygame.display.update()
+                                    for event in pygame.event.get():
+                                        if event.type == pygame.MOUSEBUTTONDOWN and event.button == 3:
+                                            mouse_pos = pygame.mouse.get_pos()
+                                            for j, r in enumerate(rects):
+                                                if r.collidepoint(mouse_pos) and not cards[j]:
+                                                    pygame.draw.rect(screen, (0, 0, 0), rect, 2)
+                                                    selected_card = None
+                                                    break
+                                            else:
+                                                continue
+                                            break
+                                    else:
+                                        continue
+                                    break
+                            pygame.display.update()
+                            break
+
+                # Redraw the selected card border (if any)
+                if selected_card is not None:
+                    pygame.draw.rect(screen, (255, 0, 0), rects[selected_card], 3)
+                pygame.display.update()
 
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_m:
@@ -174,19 +118,7 @@ class Game:
             screen.blit(maingamebackground, [0, 0])
             for i in range(6):
                 screen.blit(cardsBackFaceList[i], rects[i])
-            # screen.blit(cardsBackFace1, rect1)
-            # screen.blit(cardsBackFace2, rect2)
-            # screen.blit(cardsBackFace3, rect3)
-            # screen.blit(cardsBackFace4, rect4)
-            # screen.blit(cardsBackFace5, rect5)
-            # screen.blit(cardsBackFace6, rect6)
-            # AI CARDS
-            # screen.blit(cardsBackFaceAI, AIrects)
-            # screen.blit(cardsBackFaceAI, AIrect2)
-            # screen.blit(cardsBackFaceAI, AIrect3)
-            # screen.blit(cardsBackFaceAI, AIrect4)
-            # screen.blit(cardsBackFaceAI, AIrect5)
-            # screen.blit(cardsBackFaceAI, AIrect6)
+
             for i, rect in zip(range(6), AIrects):
                 screen.blit(cardsBackFaceAIList[i], rect)
             pygame.display.update()  
