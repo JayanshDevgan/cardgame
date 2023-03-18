@@ -1,6 +1,6 @@
 from win32api import GetSystemMetrics
 from pygame import mixer
-from cards import Cards, cards_rect_list, characterSet
+from cards import Cards, cards_rect_list, characterSet, animename_List
 from Details import Details
 import mainGame
 import pygame
@@ -143,12 +143,14 @@ class Game:
                     pygame.quit()
 
                 if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
-                    # Set the x, y postions of the mouse click
+                    # Set the x, y positions of the mouse click
                     x, y = event.pos
-                    if any(rect.collidepoint(x, y) for rect in cards_rect_list):
-                        details = Details()
-                        details.render()
-                
+                    # Check if any card rectangle collides with the mouse click position
+                    for i, rect in enumerate(cards_rect_list):
+                        if rect.collidepoint(x, y):
+                            details = Details()
+                            details.render(str(animename_List[i]))
+                    
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_m:
                         if BGMusic:

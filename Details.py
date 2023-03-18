@@ -14,10 +14,10 @@ class Details:
         mixer.music.play(-1)
         self.BGMusic = True
         self.screen = pygame.display.set_mode((GetSystemMetrics(0), GetSystemMetrics(1)))
-        pygame.display.set_caption("Details")
 
-    def render(self):
+    def render(self, DISPLAYNAME):
         while True:
+            pygame.display.set_caption(DISPLAYNAME)
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()

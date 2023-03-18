@@ -240,7 +240,7 @@ characterSet = {
     }
 }
 
-cards_rect_list, animename_list = [], []
+cards_rect_list, animenameList, animename_List = [], [], []
 
 class Cards:
     def __init__(self):
@@ -260,13 +260,29 @@ class Cards:
                     card_img = pygame.transform.scale(card_img, (170, 220))
                     card_images[card_file] = card_img
 
-        cardsList, animenameList, c_posX, c_posY, t_posY = [], [], [], [], []
+        cardsList, c_posX, c_posY, t_posY = [], [], [], []
 
+        # for i in characterSet:
+        #     animenametext = font.render(characterSet[str(i)]["animename"], True, (255, 255, 255))
+        #     animenameList.append(animenametext)
+
+        #     for j in characterSet[i]["characters"]:
+        #         card_img = card_images[characterSet[str(i)]["characters"][str(j)]["card"]]
+        #         cardsList.append(card_img)
+
+        #         if characterSet[str(i)]["characters"][str(j)]["posX"] > 10:
+        #             c_posX.append(characterSet[str(i)]["characters"][str(j)]["posX"] + card_img.get_width())
+        #         else:
+        #             c_posX.append(characterSet[str(i)]["characters"][str(j)]["posX"])
+        #         c_posY.append(characterSet[str(i)]["posY"])
+        #     t_posY.append(characterSet[str(i)]["tposY"])
+        
         for i in characterSet:
             animenametext = font.render(characterSet[str(i)]["animename"], True, (255, 255, 255))
             animenameList.append(animenametext)
 
             for j in characterSet[i]["characters"]:
+                animename_List.append(characterSet[str(i)]["characters"][str(j)]["name"])
                 card_img = card_images[characterSet[str(i)]["characters"][str(j)]["card"]]
                 cardsList.append(card_img)
 
@@ -276,6 +292,11 @@ class Cards:
                     c_posX.append(characterSet[str(i)]["characters"][str(j)]["posX"])
                 c_posY.append(characterSet[str(i)]["posY"])
             t_posY.append(characterSet[str(i)]["tposY"])
+            
+        # Loop through the card rectangles and add them to the list
+        for i in range(len(cardsList)):
+            card_rect = pygame.Rect(c_posX[i], c_posY[i], card_img.get_width(), card_img.get_height())
+            cards_rect_list.append(card_rect)
 
         for (y, animename) in zip(t_posY, animenameList):
             screen.blit(animename, [10, y])
